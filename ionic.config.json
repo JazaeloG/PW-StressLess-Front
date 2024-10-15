@@ -1,0 +1,7 @@
+{
+  "name": "StressLess-FrontEnd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
