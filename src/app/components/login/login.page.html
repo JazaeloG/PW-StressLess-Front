@@ -5,7 +5,7 @@
     </div>      
   <img src="assets/login.png" alt="Capibara de StressLess" class="svg-container " />
   <div class="form">
-      <form action="/home">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="/home" name="loginForm" id="loginForm">
       <ion-item>
         <ion-input label="Correo" color="medium" label-placement="floating" type="email" required></ion-input>
       </ion-item>
@@ -17,7 +17,7 @@
         INICIO DE SESIÓN
       </ion-button>
     </form>
-    <p class="registro">¿Ya estás registrado?</p>
+    <p class="registro">¿Aún no estás registrado?</p>
     <ion-button routerLink="/registro" expand="block" class="custom-button-2"
       >Registro</ion-button>
     </div>
