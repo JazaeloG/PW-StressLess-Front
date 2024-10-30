@@ -2,24 +2,23 @@
   <div class="form-container">
     <div class="header-container">
       <h1>StressLess</h1>
-    </div>      
-  <img src="assets/login.png" alt="Capibara de StressLess" class="svg-container " />
-  <div class="form">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="/home" name="loginForm" id="loginForm">
-      <ion-item>
-        <ion-input label="Correo" color="medium" label-placement="floating" type="email" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input label="Contraseña" color="medium" label-placement="floating" type="password" required>
-        </ion-input>
-      </ion-item>
-      <ion-button expand="block" class="custom-button-1" type="submit" id="btn" name="btn">
-        INICIO DE SESIÓN
-      </ion-button>
-    </form>
-    <p class="registro">¿Aún no estás registrado?</p>
-    <ion-button routerLink="/registro" expand="block" class="custom-button-2"
-      >Registro</ion-button>
+    </div>
+    <img src="assets/login.png" alt="Capibara de StressLess" class="svg-container " />
+    <div class="form">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="/home" name="loginForm" id="loginForm">
+        <ion-item>
+          <ion-input label="Correo" color="medium" label-placement="floating" type="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Contraseña" color="medium" label-placement="floating" type="password" required>
+          </ion-input>
+        </ion-item>
+          <ion-button expand="block" class="custom-button-1" type="submit" id="btn" name="btn">
+            INICIO DE SESIÓN
+          </ion-button>
+      </form>
+      <p class="registro">¿Aún no estás registrado?</p>
+      <ion-button routerLink="/registro" expand="block" class="custom-button-2">Registro</ion-button>
     </div>
   </div>
 </ion-content>
