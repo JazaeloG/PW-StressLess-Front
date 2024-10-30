@@ -1,0 +1,105 @@
+/* Imagen de fondo */
+.header-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  opacity: 60%;
+  position: relative;
+  top: 0;
+}
+img{
+  border-radius: 10px 10px 0 0;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  color: #595959;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+form {
+  margin: 0px 30px;
+}
+
+ion-input {
+  margin: 10px 0;
+}
+
+.register-btn {
+  margin: 30px;
+  --background: linear-gradient(180deg, #6161FF 0%, #CE96FF 100%);
+  --border-radius: 15px;
+}
+
+.login-link {
+  text-align: center;
+  margin: 30px;
+}
+
+.login-link p {
+  font-family: 'Roboto', sans-serif;
+  color: #878CC1;
+}
+
+.login-link ion-button {
+  --border-color: #8A8AB3;
+  --color: #7C7EB4;
+  --border-radius: 15px;
+  margin: 30px;
+}
+
+@media (min-width: 568px) {
+  .todo {
+    display: flex;
+    background: linear-gradient(180deg, rgba(228, 219, 255, 0.54) 0%, rgba(150, 128, 153, 0.54) 100%);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px; 
+  }
+
+  .contenedor {
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .todo {
+    display: flex;
+    background: linear-gradient(180deg, rgba(228, 219, 255, 0.54) 0%, rgba(150, 128, 153, 0.54) 100%);
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px; 
+  }
+
+  .contenedor {
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+@media (min-width: 968px) {
+
+  .contenedor {
+    width: 40%;
+
+  }
+}
