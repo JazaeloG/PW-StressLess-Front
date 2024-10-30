@@ -1,0 +1,104 @@
+<ion-content >
+  <div class="todo">  
+    <div class="contenedor">
+    <img src="assets/login.png" class="header-image">
+  
+    <div class="title">
+      <h1>StressLess</h1>
+    </div>
+  
+    <form [formGroup]="registroForm!" (ngSubmit)="onRegister()">
+      <ion-list class="form">
+        <ion-input
+          formControlName="nombre"
+          class="input-container"
+          label="Nombre(s)"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Nombre"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="nombre?.touched && nombre?.invalid">
+          <small *ngIf="nombre?.errors?.['required']">El nombre es obligatorio.</small>
+          <small *ngIf="nombre?.errors?.['minlength']">Debe tener al menos 2 caracteres.</small>
+          <small *ngIf="nombre?.errors?.['pattern']">Solo puede contener letras.</small>
+        </ion-text>
+  
+        <ion-input
+          formControlName="apellidos"
+          class="input-container"
+          label="Apellidos(s)"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Apellidos"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="apellidos?.touched && apellidos?.invalid">
+          <small *ngIf="apellidos?.errors?.['required']">El apellido es obligatorio.</small>
+          <small *ngIf="apellidos?.errors?.['minlength']">Debe tener al menos 2 caracteres.</small>
+          <small *ngIf="apellidos?.errors?.['pattern']">Solo puede contener letras.</small>
+        </ion-text>
+  
+        <ion-input
+          formControlName="correo"
+          class="input-container"
+          label="Correo"
+          label-placement="floating"
+          fill="outline"
+          placeholder="email@example.com"
+          type="email"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="correo?.touched && correo?.invalid">
+          <small *ngIf="correo?.errors?.['required']">El correo es obligatorio.</small>
+          <small *ngIf="correo?.errors?.['email']">El formato de correo no es válido.</small>
+        </ion-text>
+  
+        <ion-select formControlName="sexo" label="Sexo" label-placement="floating" fill="outline">
+          <ion-select-option value="masculino">Masculino</ion-select-option>
+          <ion-select-option value="femenino">Femenino</ion-select-option>
+        </ion-select>
+        <ion-text color="danger" *ngIf="sexo?.touched && sexo?.invalid">
+          <small *ngIf="sexo?.errors?.['required']">El sexo es obligatorio.</small>
+        </ion-text>
+  
+        <ion-input
+          formControlName="edad"
+          class="input-container"
+          label="Edad"
+          label-placement="floating"
+          fill="outline"
+          placeholder="18"
+          type="number"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="edad?.touched && edad?.invalid">
+          <small *ngIf="edad?.errors?.['required']">La edad es obligatoria.</small>
+          <small *ngIf="edad?.errors?.['min']">Debe ser al menos 18 años.</small>
+          <small *ngIf="edad?.errors?.['max']">Debe ser menor o igual a 100 años.</small>
+        </ion-text>
+  
+        <ion-input
+          formControlName="contrasena"
+          class="input-container"
+          label="Contraseña"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Contraseña"
+          type="password"
+        ></ion-input>
+        <ion-text color="danger" *ngIf="contrasena?.touched && contrasena?.invalid">
+          <small *ngIf="contrasena?.errors?.['required']">La contraseña es obligatoria.</small>
+          <small *ngIf="contrasena?.errors?.['minlength']">Debe tener al menos 6 caracteres.</small>
+          <small *ngIf="contrasena?.errors?.['pattern']">Debe contener al menos una letra y un número.</small>
+        </ion-text>
+      </ion-list>
+  
+      <ion-button expand="block" class="register-btn" type="submit" [disabled]="registroForm?.invalid">
+        Registro
+      </ion-button>
+    </form>
+  
+    <div class="login-link">
+      <p>¿Ya estás registrado?</p>
+      <ion-button fill="outline" expand="block" routerLink=" login">Iniciar sesión</ion-button>
+    </div>
+    </div></div>
+
+</ion-content>
