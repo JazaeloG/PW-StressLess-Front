@@ -1,0 +1,41 @@
+/* ion-content{
+    estres
+    position: relative;
+    width: 360px;
+    height: 800px;
+    background: #FFFFFF;
+} */
+
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .contenido {
+    position: relative;
+    width: 100%;
+    max-width: 500px; 
+    padding: 30px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-radius: 10px;
+
+    /* width: 80%;
+    max-width: 90%;
+    padding: 20px; */
+    background-color: #a8a6a6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: añade sombra */
+  }
+  
+  .titulo {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #000000;
+    margin: 0;
+  }  

@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./components/tabs/tabs.module').then( m => m.TabsPageModule)
+  },  {
+    path: 'resultados',
+    loadChildren: () => import('./components/resultados/resultados.module').then( m => m.ResultadosPageModule)
   },
+
   
 
 ];
