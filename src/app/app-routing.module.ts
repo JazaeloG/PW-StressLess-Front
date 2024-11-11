@@ -23,6 +23,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./components/tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  {
+    path: 'inicio-test',
+    loadChildren: () => import('./components/inicio-test/inicio-test.module').then( m => m.InicioTestPageModule)
+  },
   
 
 ];
