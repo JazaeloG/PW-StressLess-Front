@@ -23,7 +23,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./components/tabs/tabs.module').then( m => m.TabsPageModule)
   },
-  
+
 
 ];
 @NgModule({

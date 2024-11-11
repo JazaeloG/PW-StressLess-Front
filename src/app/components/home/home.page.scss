@@ -1,0 +1,53 @@
+.custom-card {
+  margin-bottom: 10px; /* Espacio entre las tarjetas */
+  width: 80%; /* Las tarjetas ocupan el 80% del ancho de la columna */
+  max-width: 600px; /* Limita el ancho máximo de las tarjetas */
+  margin-left: auto;
+  margin-right: auto;
+  height: 220px; /* Aumentamos la altura de la tarjeta */
+  border-radius: 20px; /* Redondeo de las esquinas */
+  overflow: hidden; /* Asegura que el contenido no sobresalga de los bordes redondeados */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.card-content-row {
+  display: flex; /* Usamos flexbox para colocar la imagen y el texto al lado */
+  align-items: center; /* Centra la imagen y el texto verticalmente */
+}
+
+.image-col {
+  padding: 0; /* Elimina el padding por defecto de ion-col */
+}
+
+.card-image {
+  width: 100%; /* Ancho de la imagen ocupa el 100% del espacio asignado */
+  height: 100%; /* La imagen ocupará toda la altura de la tarjeta */
+  object-fit: cover; /* Asegura que la imagen cubra todo el área de la celda */
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  max-width: 250px; /* Aumentamos el tamaño de la imagen */
+  max-height: 250px; /* Aumentamos el tamaño de la imagen */
+}
+
+.text-col {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el texto */
+}
+
+ion-card-header {
+  padding-bottom: 10px; /* Espacio entre el header y el contenido */
+}
+
+/* Responsividad para pantallas más grandes */
+@media (min-width: 768px) {
+  .custom-card {
+    width: 70%; /* En pantallas medianas, las tarjetas ocupan el 70% del ancho */
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-card {
+    width: 60%; /* En pantallas grandes, las tarjetas ocupan el 60% del ancho */
+  }
+}
