@@ -1,0 +1,40 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+
+:root{
+    --ion-color-stressLess-background1: #FFFFFF;
+    --ion-color-stressLess-background2: #DDDDDD;
+    --ion-color-stressLess-header1: #65CCFF;
+    --ion-color-stressLess-header2: #976BFE;
+    --ion-color-stressLess-chat-bubble: #A59090;
+    --ion-color-stressLess-message: #F2F2F2;
+    --ion-color-stressLess-chatbot-response: #9470FE;
+    --ion-color-stressLess-user-response: #12BB75;
+    --ion-color-stressLess-exercise-dark-background1: #0CB176;
+    --ion-color-stressLess-exercise-clear-background1: #25DC71;
+    --ion-color-stressLess-exercise-dark-background2: #FF686B;
+    --ion-color-stressLess-exercise-clear-background2: #EC6F9E;
+    --ion-color-stressLess-exercise-dark-background3: #976BFE;
+    --ion-color-stressLess-exercise-clear-background3: #65CCFF;
+    --ion-color-stressLess-exercise-dark-background4: #FF9A34;
+    --ion-color-stressLess-exercise-clear-background4: #F0BF44;
+}
+
+.ion-color-stressLess{
+    --ion-color-stressLess-background1: var(--ion-color-stressLess-background1);
+    --ion-color-stressLess-background2: var(--ion-color-stressLess-background2);
+    --ion-color-stressLess-header1: var(--ion-color-stressLess-header1);
+    --ion-color-stressLess-header2: var(--ion-color-stressLess-header2);
+    --ion-color-stressLess-chat-bubble: var(--ion-color-stressLess-chat-bubble);
+    --ion-color-stressLess-message: var(--ion-color-stressLess-message);
+    --ion-color-stressLess-chatbot-response: var(--ion-color-stressLess-chatbot-response);
+    --ion-color-stressLess-user-response: var(--ion-color-stressLess-user-response);
+    --ion-color-stressLess-exercise-dark-background1: var(--ion-color-stressLess-exercise-dark-background1);
+    --ion-color-stressLess-exercise-clear-background1: var(--ion-color-stressLess-exercise-clear-background1);
+    --ion-color-stressLess-exercise-dark-background2: var(--ion-color-stressLess-exercise-dark-background2);
+    --ion-color-stressLess-exercise-clear-background2: var(--ion-color-stressLess-exercise-clear-background2);
+    --ion-color-stressLess-exercise-dark-background3: var(--ion-color-stressLess-exercise-dark-background3);
+    --ion-color-stressLess-exercise-clear-background3: var(--ion-color-stressLess-exercise-clear-background3);
+    --ion-color-stressLess-exercise-dark-background4: var(--ion-color-stressLess-exercise-dark-background4);
+    --ion-color-stressLess-exercise-clear-background4: var(--ion-color-stressLess-exercise-clear-background4);
+}

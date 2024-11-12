@@ -1,0 +1,102 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 250px;
+$breakpoint-md: 400px;
+$breakpoint-lg: 550px;
+$breakpoint-xl: 750px;
+$breakpoint-xxl: 1000px;
+
+.header{
+    width: 100%;
+    .toolbar{
+        width: 100%;
+        height: 70px;
+        .title{
+            margin-left: 10%;
+            font-weight: bolder;
+            font-size: x-large;
+            padding-left: 0;
+        }
+        .buttons{
+            margin-right: 10%;
+            .button{
+                .icon{
+                    font-size: x-large;
+                }
+            }
+        }
+    }
+}
+
+#chat{
+    position: fixed;
+    right: 4%;
+    bottom: 4%;
+}
+
+@media only screen and (max-width: #{$breakpoint-xl}){
+    .header{
+        .toolbar{
+            .title{
+                margin-left: 8%;
+            }
+            .buttons{
+                margin-right: 8%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: #{$breakpoint-lg}){
+    .header{
+        .toolbar{
+            height: 60px;
+            .title{
+                margin-left: 6%;
+                font-size: large;
+            }
+            .buttons{
+                margin-right: 6%;
+                .button{
+                    .icon{
+                        font-size: large;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: #{$breakpoint-md}){
+    .header{
+        .toolbar{
+            height: 60px;
+            .title{
+                margin-left: 5%;
+                font-size: medium;
+            }
+            .buttons{
+                margin-right: 5%;
+                .button{
+                    .icon{
+                        font-size: medium;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: #{$breakpoint-sm}){
+    .header{
+        .toolbar{
+            height: 50px;
+            .title{
+                margin-left: 4%;
+                font-size: small;
+            }
+            .buttons{
+                margin-right: 4%;
+            }
+        }
+    }
+}

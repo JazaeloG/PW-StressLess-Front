@@ -1,0 +1,53 @@
+#chat{
+    width: 55%;
+    margin: auto;
+    margin-top: 4%;
+    padding: 0  ;
+    #card{
+        padding: 3%;
+        border-radius: 12px;
+        #writter{
+            border: 2px solid gray;
+            border-radius: 12px;
+            margin-top: 12%;
+        }
+    }
+}
+
+.messages{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px;
+    max-width: 80%;
+    min-width: 11%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+  
+.chatbot-message {
+    align-self: flex-start;
+    background-color: #f1f0f0;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px;
+    max-width: 80%;
+    min-width: 11%;
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#button{
+    position: absolute;
+    margin-top: 4%;
+    margin-left: 13%;
+}

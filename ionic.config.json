@@ -1,0 +1,7 @@
+{
+  "name": "stressLessHome",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

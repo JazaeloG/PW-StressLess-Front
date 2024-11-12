@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-button size="large" id="button" (click)="returnToHome()">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+
+  <ion-card class="card">
+    <div class="mainDiv">
+      <ion-card-header class="header">
+        <ion-card-title class="titulo"><h3>Reto {{ejercicio.number}} | {{ejercicio.name}}</h3></ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="description">
+        <p>{{ejercicio.description}}</p>
+      </ion-card-content>
+    </div>
+    <div class="detailsDiv">
+      <ion-card-content class="details">
+        <p>{{ejercicio.description}}</p>
+        <ion-img class="image" src={{ejercicio.image}} alt="image not found"></ion-img>
+      </ion-card-content>
+    </div>
+  </ion-card>
+</ion-content>

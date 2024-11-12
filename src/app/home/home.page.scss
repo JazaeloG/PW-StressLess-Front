@@ -1,0 +1,150 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 250px;
+$breakpoint-md: 400px;
+$breakpoint-lg: 550px;
+$breakpoint-xl: 750px;
+$breakpoint-xxl: 1000px;
+
+// #container {
+//   text-align: center;
+
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
+
+// #container strong {
+//   font-size: 20px;
+//   line-height: 26px;
+// }
+
+// #container p {
+//   font-size: 16px;
+//   line-height: 22px;
+
+//   color: #8c8c8c;
+
+//   margin: 0;
+// }
+
+// #container a {
+//   text-decoration: none;
+// }
+
+.card{
+  width: 60%;
+  margin: auto;
+  margin-top: 2%;
+  padding: 0;
+  div{
+    display: inline-block;
+    h3{
+      font-weight: bold;
+      font-size: x-large;
+    }
+    p{
+      font-size: medium;
+    }
+    .image{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .leftImage{
+    width: 30%;
+    margin: auto;
+    float: left;
+  }
+  .rightImage{
+    width: 30%;
+    margin: auto;
+    float: right;
+  }
+  .leftInformation{
+    width: 65%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1%;
+  }
+  .rightInformation{
+    width: 65%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1%;
+  }
+}
+
+#cuadro{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: fit-content;
+}
+
+@media only screen and (max-width: #{$breakpoint-xxl}){
+  .card{
+    width: 70%;
+    .leftImage{
+      width: 38%;
+    }
+    .rightImage{
+      width: 38%;
+    }
+    .leftInformation{
+      width: 57%;
+    }
+    .rightInformation{
+      width: 57%;
+    }
+    div{
+      h3{
+        font-size: 1.2em;
+      }
+      p{
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: #{$breakpoint-lg}){
+  .card{
+    width: 80%;
+    .leftImage{
+      width: 45%;
+    }
+    .rightImage{
+      width: 45%;
+    }
+    .leftInformation{
+      width: 50%;
+      .descripcion{
+        display: none;
+      }
+    }
+    .rightInformation{
+      width: 50%;
+      .descripcion{
+        display: none;
+      }
+    }
+    div{
+      h3{
+        font-size: 1em;
+      }
+      p{
+        font-size: 0.8em;
+      }
+    }
+  }
+}

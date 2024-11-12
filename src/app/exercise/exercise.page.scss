@@ -1,0 +1,50 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 250px;
+$breakpoint-md: 400px;
+$breakpoint-lg: 550px;
+$breakpoint-xl: 750px;
+$breakpoint-xxl: 1000px;
+
+.card{
+    width: 55%;
+    margin: auto;
+    margin-top: 4%;
+    padding: 0;
+    div{
+      display: inline-block;
+      height: fit-content;
+      .header{
+        h3{
+            font-weight: bold;
+            font-size: x-large;
+          }
+      }
+      .description{
+        p{
+            font-size: medium;
+        }
+      }
+      .details{
+        overflow: hidden;
+        p{
+            font-size: medium;
+            display: inline-block;
+            width: 50%;
+            margin: 5%;
+        }
+        .image{
+            display: inline-block;
+            width: 30%;
+            position: fixed;
+            right: 0;
+
+        }
+      }
+    }
+}
+
+  #button{
+      position: absolute;
+      margin-top: 4%;
+      margin-left: 13%;
+  }

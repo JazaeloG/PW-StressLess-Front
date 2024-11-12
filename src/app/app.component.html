@@ -1,0 +1,26 @@
+<ion-app>
+  <ion-header class="header">
+    <ion-toolbar class="toolbar">
+      <ion-title class="title">
+        StressLess
+      </ion-title>
+      <ion-buttons slot="primary" class="buttons">
+        <ion-button class="button">
+          <ion-icon name="home-outline" class="icon"></ion-icon>
+        </ion-button>
+        <ion-button class="button">
+          <ion-icon name="chatbubbles-outline" class="icon"></ion-icon>
+        </ion-button>
+        <ion-button class="button">
+          <ion-icon name="exit-outline" class="icon"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-router-outlet></ion-router-outlet>
+    <ion-button id="chat" size="large" shape="round" (click)="openChat()">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-app>
