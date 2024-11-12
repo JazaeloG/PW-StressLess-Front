@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'inicio-test',
     loadChildren: () => import('./components/inicio-test/inicio-test.module').then( m => m.InicioTestPageModule)
+  },  {
+    path: 'preguntas',
+    loadChildren: () => import('./components/preguntas/preguntas.module').then( m => m.PreguntasPageModule)
   },
+
   
 
 ];
