@@ -1,5 +1,5 @@
 ion-content {
-    --background: #0047ab; /* Fondo azul */
+  --background: linear-gradient(180deg, #e4dbff 0%, #aea3af 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,9 +48,11 @@ ion-content {
   
     
   
-  .next-button {
+  .custom-button-1 {
     margin-top: 20px;
     font-size: 14px;
     width: 150px;
     align-self: center;
   }
+
+

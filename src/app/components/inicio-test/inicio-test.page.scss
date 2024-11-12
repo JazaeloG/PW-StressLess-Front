@@ -8,7 +8,7 @@
     flex-direction: column;
   }
   ion-content {
-    background: linear-gradient(180deg, rgba(228, 219, 255, 0.54) 0%, rgba(150, 128, 153, 0.54) 100%);
+    --background: linear-gradient(180deg, #e4dbff 0%, #aea3af 100%);
   }
   
   .main-container {

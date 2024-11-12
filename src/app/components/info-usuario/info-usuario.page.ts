@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InfoUsuarioService, UserInfo } from 'src/app/servicios/info-usuario.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { InfoUsuarioService, UserInfo } from 'src/app/servicios/info-usuario.ser
 })
 export class InfoUsuarioPage implements OnInit {
 
-  constructor(private infoUsuarioService: InfoUsuarioService) { }
+  constructor(
+    private infoUsuarioService: InfoUsuarioService,
+    private router: Router,
+  ) { }
 
 
   userInfo: UserInfo | null = null;
@@ -19,4 +23,9 @@ export class InfoUsuarioPage implements OnInit {
     });
   }
 
+  cerrarSesion() {
+    /*this.cuentaService.clearCuenta();
+    this.router.navigate(['login']); */
+    this.router.navigate(['/login']);
+  }
 }

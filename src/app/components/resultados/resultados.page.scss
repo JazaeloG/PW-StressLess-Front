@@ -4,7 +4,7 @@ ion-content {
     align-items: center;
     height: 100vh; /* Ocupa toda la altura de la pantalla */
     padding: 0;
-    background-color: #f8f9fa; /* Fondo de la pantalla */
+    --background: linear-gradient(180deg, #e4dbff 0%, #aea3af 100%);
   }
   
   .container {
@@ -55,12 +55,12 @@ ion-content {
     color: #007bff; /* Color destacado */
   }
   
-  .custom-button-1 {
+/*   .custom-button-1 {
     --background: #007bff;
     --color: #ffffff;
     --border-radius: 8px;
     --padding-start: 16px;
     --padding-end: 16px;
     margin-top: 20px;
-  }
+  } */
   

@@ -7,12 +7,11 @@ import { Router } from '@angular/router';
   templateUrl: './chat.page.html',
   styleUrls: ['./chat.page.scss'],
 })
-export class ChatPage implements OnInit {
+export class ChatPage {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
+  
 
   messages: Message[] = [];
   userInput: string = '';
