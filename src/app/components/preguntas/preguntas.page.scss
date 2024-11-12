@@ -12,7 +12,7 @@ ion-content {
   }
   
   .question-box {
-    background-color: #c4c4c4; /* Fondo gris */
+    background-color: #ffffff; /* Fondo gris */
     padding: 20px;
     border-radius: 12px;
     width: 80%; /* Aumenta el ancho al 80% sin límite máximo */
@@ -21,7 +21,7 @@ ion-content {
   
   p {
     font-weight: bold;
-    color: #333;
+    color: #000000;
   }
   
   ion-item {
@@ -36,7 +36,7 @@ ion-content {
         --background: #d3d3d3; /* Fondo gris cuando no está seleccionado */
         --checked-background: #000; /* Fondo negro cuando está seleccionado */
         --checked-icon: #fff; /* Color blanco para el ícono de selección */
-        --border-color: #999; /* Color del borde */
+        --border-color: #e8e8e8; /* Color del borde */
         --border-width: 2px; /* Ancho del borde */
       }
   

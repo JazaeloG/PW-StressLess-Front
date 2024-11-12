@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./components/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./components/home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: 'registro',
     loadChildren: () => import('./components/registro/registro.module').then( m => m.RegistroPageModule)
   },
@@ -26,10 +22,15 @@ const routes: Routes = [
   {
     path: 'inicio-test',
     loadChildren: () => import('./components/inicio-test/inicio-test.module').then( m => m.InicioTestPageModule)
-  },  {
+  },
+  {
     path: 'preguntas',
     loadChildren: () => import('./components/preguntas/preguntas.module').then( m => m.PreguntasPageModule)
+  },  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
+
 
   
 

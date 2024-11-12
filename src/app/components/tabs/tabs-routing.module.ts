@@ -12,8 +12,8 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'resultados',
-        loadChildren: () => import('../resultados/resultados.module').then(m => m.ResultadosPageModule)
+        path: 'info-usuario',
+        loadChildren: () => import('../info-usuario/info-usuario.module').then(m => m.InfoUsuarioPageModule)
       },
       {
         path: '',
@@ -21,13 +21,9 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ]
-  },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

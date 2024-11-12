@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="container">
+    <div class="contenido">
+      <div class="avatar">
+        <img src="assets/capi.png" alt="Avatar">
+      </div>
+      <h2 class="titulo">Información personal</h2>
+
+      <p class="info-item">
+        <strong>Nombre:</strong> {{ userInfo?.nombre }}
+      </p>
+      <p class="info-item">
+        <strong>Apellidos:</strong> {{ userInfo?.apellidos }}
+      </p>
+      <p class="info-item">
+        <strong>Correo electrónico:</strong> {{ userInfo?.email }}
+      </p>
+      <p class="info-item">
+        <strong>Sexo:</strong> {{ userInfo?.sexo }}
+      </p>
+      <p class="info-item">
+        <strong>Edad:</strong> {{ userInfo?.edad }}
+      </p>
+      <p class="info-item">
+        <strong>Indice de Estrés:</strong> {{ userInfo?.indiceEstres }}
+      </p>
+    </div>
+  </div>
+</ion-content>

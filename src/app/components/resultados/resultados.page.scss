@@ -1,0 +1,66 @@
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 0;
+    background-color: #f8f9fa; /* Fondo de la pantalla */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+  }
+  
+  .imagen-capibara img {
+    max-width: 100px;
+    border-radius: 50%; /* Imagen circular */
+    margin-bottom: 20px;
+  }
+  
+  .titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .puntuacion,
+  .nivel-estres,
+  .texto-info {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .nivel-estres span {
+    font-weight: bold;
+    color: #007bff; /* Color destacado */
+  }
+  
+  .custom-button-1 {
+    --background: #007bff;
+    --color: #ffffff;
+    --border-radius: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    margin-top: 20px;
+  }
+  
