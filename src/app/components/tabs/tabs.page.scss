@@ -1,7 +1,9 @@
 ion-tab-bar {
-    --background: linear-gradient(90deg, #65CCFF 0%, #976BFE 100%);
-    --color: white;
-    //--color-selected: rgb(135, 10, 237);
-  }
+  --background: linear-gradient(90deg, #65CCFF 0%, #976BFE 100%);
+  --color: white;
+  --color-selected: #7F4FE0;
+}
 
-
+ion-tab-button {
+  --color: white;
+}

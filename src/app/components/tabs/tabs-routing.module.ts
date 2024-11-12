@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../info-usuario/info-usuario.module').then(m => m.InfoUsuarioPageModule)
       },
       {
+        path: 'chat',
+        loadChildren: () => import('../chat/chat-routing.module').then( m => m.ChatPageRoutingModule)
+      },
+      {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'

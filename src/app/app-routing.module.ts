@@ -26,14 +26,15 @@ const routes: Routes = [
   {
     path: 'preguntas',
     loadChildren: () => import('./components/preguntas/preguntas.module').then( m => m.PreguntasPageModule)
-  },  {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
-
-
-  
-
+  {
+    path: 'exercise/:number',
+    loadChildren: () => import('./components/exercise/exercise.module').then( m => m.ExercisePageModule)
+  },
+  {
+    path: 'resultados',
+    loadChildren: () => import('./components/resultados/resultados.module').then( m => m.ResultadosPageModule)
+  },
 ];
 @NgModule({
   imports: [

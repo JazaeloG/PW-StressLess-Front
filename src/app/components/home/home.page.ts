@@ -16,11 +16,12 @@ export class HomePage implements OnInit {
     private dataTransportService: RecomendacionesService, 
     private router: Router) { }
   
-  ngOnInit(): void {
-    console.log("ngOnInit Inicializado");
-    this.retos = this.dataTransportService.getData();
-    console.log(this.retos);
-  }
+    ngOnInit(): void {
+      console.log("ngOnInit Inicializado");
+      this.dataTransportService.setData(this.dataTransportService.retosExtraidos);
+      this.retos = this.dataTransportService.getData();
+      console.log(this.retos);
+    }
 
   reto = {} as exercise;
   retos: exercise[] = [];
@@ -47,6 +48,13 @@ export class HomePage implements OnInit {
   }
 
   sendData(data: exercise) {
-    this.dataTransportService.setData([data]);
+    console.log('Datos enviados:', data);
+    this.dataTransportService.setData(this.retos);
+    this.router.navigate(['/exercise', data.number]);
   }
+
+  navigateToTest() {
+    this.router.navigate(['/inicio-test']); 
+  }
+
 }

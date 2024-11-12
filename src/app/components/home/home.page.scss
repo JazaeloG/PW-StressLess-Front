@@ -121,3 +121,38 @@ $breakpoint-xxl: 1000px;
     }
   }
 }
+
+
+.answer-button {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px; 
+  border-radius: 30px;
+  background-color: #7F4FE0; 
+  color: white; 
+  padding: 12px 24px; 
+  font-size: 16px;
+  z-index: 10;
+  --padding-start: 0px; 
+  --padding-end: 0px;  
+  --border-radius: 30px; 
+  --background: #7F4FE0; 
+  --background-activated: #6A3DCC; 
+  --color: white; 
+  --box-shadow: none;
+}
+
+.answer-button .button-inner {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+}
+
+.answer-button:focus {
+  outline: none; 
+}
+
+.answer-button:hover {
+  background-color: #6A3DCC; 
+}

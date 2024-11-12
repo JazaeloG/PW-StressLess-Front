@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="gray">
+    <ion-title class="ion-text-center">Detalles del Reto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content-container">
+    <ion-card class="reto-card" *ngIf="reto">
+      <img [src]="reto.image" alt="Imagen no encontrada" class="reto-image">
+      <ion-card-header class="reto-card-header">
+        <ion-card-title>{{reto.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="reto-details">{{reto.description}}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

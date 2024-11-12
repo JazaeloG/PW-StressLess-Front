@@ -10,17 +10,22 @@ export class RecomendacionesService {
 
   constructor(private http: HttpClient) {}
 
-  data: exercise[] = retos; 
+  retosExtraidos: exercise[] = retos;
 
-  setData(data: exercise[]) {
-    localStorage.setItem('exercises', JSON.stringify(data));
+  setData(retosExtraidos: exercise[]) {
+    localStorage.setItem('exercises', JSON.stringify(retosExtraidos));
   }
+  
   getData(): exercise[] {
-    const data = localStorage.getItem('exercises');
-    if (data) {
-      return JSON.parse(data);
+    const retosExtraidos = localStorage.getItem('exercises');
+    if (retosExtraidos) {
+      return JSON.parse(retosExtraidos); 
     } else {
-      return this.data;
+      return this.retosExtraidos;
     }
+  }
+  getExerciseById(id: number): exercise | undefined {
+    const exercises = this.getData();
+    return exercises.find(exercise => exercise.number === id);
   }
 }
