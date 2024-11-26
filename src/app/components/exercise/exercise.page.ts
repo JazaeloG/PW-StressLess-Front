@@ -21,7 +21,7 @@ export class ExercisePage implements OnInit {
     
     const number = this.route.snapshot.paramMap.get('number');
     if (number) {
-      this.reto = this.dataTransportService.getData().find(r => r.number === parseInt(number));  // Filtramos el reto por su id
+      this.reto = this.dataTransportService.getData().find(r => r.id_Recomendacion === parseInt(number));  // Filtramos el reto por su id
       console.log(this.reto);
     }
   }

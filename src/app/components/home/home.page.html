@@ -1,15 +1,15 @@
 <ion-content>
   <ion-card class="card" *ngFor="let reto of retos; let i = index" (click)="sendData(reto)" 
     [ngStyle]="{'background': 'linear-gradient(135deg, var({{getColor(i, 0)}}), var({{getColor(i, 1)}}))'}">
-    <div [class]="reto.number % 2 != 0 ? 'rightImage' : 'leftImage'">
+    <div [class]="reto.id_Recomendacion % 2 != 0 ? 'rightImage' : 'leftImage'">
       <img class="image" [src]="reto.image" alt="image not found">
     </div>
-    <div [class]="reto.number % 2 == 0 ? 'leftInformation' : 'rightInformation'">
+    <div [class]="reto.id_Recomendacion % 2 == 0 ? 'leftInformation' : 'rightInformation'">
       <ion-card-header>
-        <ion-card-title class="titulo"><h3>Reto {{reto.number}} | {{reto.name}}</h3></ion-card-title>
+        <ion-card-title class="titulo"><h3>Reto {{reto.id_Recomendacion}} | {{reto.recomendacion_Nombre}}</h3></ion-card-title>
       </ion-card-header>
       <ion-card-content class="descripcion">
-        <p>{{reto.description}}</p>
+        <p>{{reto.recomendacion_Descripcion}}</p>
       </ion-card-content>
     </div>
   </ion-card>

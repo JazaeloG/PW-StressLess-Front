@@ -50,7 +50,7 @@ export class HomePage implements OnInit {
   sendData(data: exercise) {
     console.log('Datos enviados:', data);
     this.dataTransportService.setData(this.retos);
-    this.router.navigate(['/exercise', data.number]);
+    this.router.navigate(['/exercise', data.id_Recomendacion]);
   }
 
   navigateToTest() {

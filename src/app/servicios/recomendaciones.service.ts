@@ -26,6 +26,6 @@ export class RecomendacionesService {
   }
   getExerciseById(id: number): exercise | undefined {
     const exercises = this.getData();
-    return exercises.find(exercise => exercise.number === id);
+    return exercises.find(exercise => exercise.id_Recomendacion === id);
   }
 }

@@ -1,9 +1,6 @@
 <ion-content>
-  <ion-button size="large" id="button" (click)="returnToHome()">
-    <ion-icon name="arrow-back-outline"></ion-icon>
-  </ion-button>
   <div id="chat">
-    <h2>StressLess</h2>
+    <h2>RelixBot</h2>
     <ion-card id="card">
       <div class="messages">
         <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'user', 'chatbot-message': message.sender === 'chatbot'}">
@@ -13,9 +10,9 @@
         </div>
       </div>
       <ion-item id="writter">
-        <ion-input  placeholder="Mensaje" fill="solid"></ion-input>
-        <ion-button expand="full" class="answer-button" (click)="sendMessage()">
-          Contestar
+        <ion-input class="mensaje-usuario"  placeholder="Mensaje" fill="solid"></ion-input>
+        <ion-button class="custom-button-1" (click)="sendMessage()">
+          <ion-icon name="paper-plane-outline"></ion-icon>
         </ion-button>
       </ion-item>
     </ion-card>

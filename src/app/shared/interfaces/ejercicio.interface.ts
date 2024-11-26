@@ -1,7 +1,8 @@
 export interface exercise{
-    number: number,
-    name: string,
-    description: string,
-    details: string,
-    image: string
+    id_Recomendacion: number,
+    recomendacion_Nombre: string,
+    recomendacion_Descripcion: string,
+    recomendacion_Detalles: string,
+    recomendacion_NivelRecomendacion: number,
+    image: string,
 }
