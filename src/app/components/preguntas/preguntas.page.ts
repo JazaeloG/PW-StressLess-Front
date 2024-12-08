@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TestService } from 'src/app/servicios/test.service';
 
 @Component({
   selector: 'app-preguntas',
@@ -7,27 +8,62 @@ import { Router } from '@angular/router';
   styleUrls: ['./preguntas.page.scss'],
 })
 export class PreguntasPage implements OnInit {
+  preguntas: any[] = [];
+  answers: { [key: number]: number } = {}; 
+  test: any = {};
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private testService: TestService) {}
 
   ngOnInit() {
+    this.getTests();
   }
-  questions = [
-    { id: 1, text: '¿Con qué frecuencia has sentido que no puedes manejar todas las cosas que tienes que hacer?', options: ['Nunca', 'Ocasionalmente', 'Generalmente', 'Siempre'] },
-    { id: 2, text: '¿Con qué frecuencia has sentido que tienes demasiado que hacer?', options: ['Rara vez', 'Algunas veces', 'A menudo', 'Siempre'] },
-    { id: 3, text: '¿Con qué frecuencia has sentido que no puedes lidiar con todos los problemas y preocupaciones que tienes en tu vida?', options: ['Nunca', 'A veces', 'Frecuentemente', 'Constantemente'] },
-    { id: 4, text: 'Pregunta 4', options: ['Nunca', 'Algunas veces', 'A menudo', 'Siempre'] },
-    { id: 5, text: 'Pregunta 5', options: ['Nunca', 'Ocasionalmente', 'Generalmente', 'Siempre'] },
-    { id: 6, text: 'Pregunta 6', options: ['Rara vez', 'A veces', 'Frecuentemente', 'Siempre'] },
-    { id: 7, text: 'Pregunta 7', options: ['Nunca', 'Algunas veces', 'A menudo', 'Siempre'] },
-    { id: 8, text: 'Pregunta 8', options: ['Nunca', 'Ocasionalmente', 'Generalmente', 'Siempre'] },
-    { id: 9, text: 'Pregunta 9', options: ['Rara vez', 'Algunas veces', 'A menudo', 'Siempre'] },
-    { id: 10, text: 'Pregunta 10', options: ['Nunca', 'A veces', 'Frecuentemente', 'Siempre'] },
-  ];
-
-  answers: { [key: number]: string } = {};
 
   goToResults() {
-    this.router.navigate(['/resultados']);
+    const puntaje = this.testPuntaje();
+    const testResult = {
+      usuarioId: 1,
+      testId:  this.test.id_Test,
+      testResultado_Puntaje: puntaje,
+      testResultado_Comentarios: 'Test realizado',
+    };
+    const enviarPuntaje = testResult.testResultado_Puntaje;
+    this.testService.crearTestResultado(testResult).subscribe({
+      next: (response) => {
+        console.log('Resultado del test guardado:', response);
+      },
+      error: (error) => {
+        console.error('Error al guardar resultado del test:', error);
+      },
+    });
+
+    this.router.navigate(['/resultados'], { state: { enviarPuntaje } }); 
+  }
+
+  getTests() {
+    this.testService.getTests().subscribe({
+      next: (response) => {
+        if (response && response[0] && response[0].preguntas) {
+          this.preguntas = response[0].preguntas;
+          this.test = response[0];
+        }
+      },
+      error: (error) => {
+        console.error('Error al obtener preguntas:', error);
+      },
+    });
+  }
+
+  testPuntaje() {
+    let puntaje = 0;
+    for (const key in this.answers) {
+      if (this.answers.hasOwnProperty(key)) {
+        puntaje += this.answers[key]; 
+      }
+    }
+    return puntaje;
+  }
+
+  isFormComplete() {
+    return Object.keys(this.answers).length === this.preguntas.length;
   }
 }
