@@ -7,10 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./resultados.page.scss'],
 })
 export class ResultadosPage implements OnInit {
+  testResult: any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    this.testResult = history.state.enviarPuntaje;
+    console.log('Resultado del test:', this.testResult);
   }
 
   navegarResultados() {

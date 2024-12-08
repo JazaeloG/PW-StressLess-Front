@@ -1,16 +1,29 @@
 <ion-content class="ion-padding" fullscreen>
   <div class="container">
     <div class="question-box">
-      <div *ngFor="let question of questions">
-        <p>{{ question.id }}. {{ question.text }}</p>
-        <ion-radio-group [(ngModel)]="answers[question.id]">
-          <ion-item *ngFor="let option of question.options" lines="none">
-            <ion-label>{{ option }}</ion-label>
-            <ion-radio slot="start" [value]="option"></ion-radio>
+      <div *ngFor="let question of preguntas">
+        <p>{{ question.id_Pregunta }}. {{ question.pregunta_Texto }}</p>
+        <ion-radio-group [(ngModel)]="answers[question.id_Pregunta]">
+          <ion-item lines="none">
+            <ion-label>Nunca</ion-label>
+            <ion-radio slot="start" [value]="1"></ion-radio>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Ocasionalmente</ion-label>
+            <ion-radio slot="start" [value]="2"></ion-radio>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Generalmente</ion-label>
+            <ion-radio slot="start" [value]="3"></ion-radio>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Siempre</ion-label>
+            <ion-radio slot="start" [value]="4"></ion-radio>
           </ion-item>
         </ion-radio-group>
       </div>
-      <ion-button expand="block" class="custom-button-1" (click)="goToResults()">Siguiente</ion-button>
+      <!-- Deshabilitar el botón hasta que todas las preguntas estén contestadas -->
+      <ion-button expand="block" class="custom-button-1" (click)="goToResults()" [disabled]="!isFormComplete()">Siguiente</ion-button>
     </div>
   </div>
 </ion-content>
