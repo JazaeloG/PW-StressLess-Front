@@ -17,8 +17,8 @@ export class InfoUsuarioPage implements OnInit {
 
   userInfo: UserInfo | null = null;
 
-  ngOnInit(): void {
-    this.infoUsuarioService.getUserInfo().subscribe(data => {
+  async ngOnInit(): Promise<void> {
+    (this.infoUsuarioService.getUserInfo()).subscribe(data => {
       this.userInfo = data;
     });
   }

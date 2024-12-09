@@ -19,9 +19,10 @@ export class PreguntasPage implements OnInit {
   }
 
   goToResults() {
+    const usuarioID = localStorage.getItem("id_Usuario");
     const puntaje = this.testPuntaje();
     const testResult = {
-      usuarioId: 1,
+      usuarioId: usuarioID,
       testId:  this.test.id_Test,
       testResultado_Puntaje: puntaje,
       testResultado_Comentarios: 'Test realizado',

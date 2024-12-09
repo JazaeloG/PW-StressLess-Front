@@ -1,24 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegistroService } from 'src/app/servicios/registro.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
   loginForm!: FormGroup;
 
-  constructor(private router : Router,  private fb: FormBuilder) { 
+  constructor(
+    private router : Router,  
+    private fb: FormBuilder,
+    private registroserv: RegistroService
+  ) { }
+
+  ngOnInit(): void {
     this.loginForm = this.fb.group({
-      correo: ['', Validators.required],
-      contrasena: ['', Validators.required]
+      usuario_Correo: ['', Validators.required],
+      usuario_Password: ['', Validators.required]
     });
   }
 
-  onSubmit():void{
-    this.router.navigate(['/home']);
+  onSubmit(): void {
+    console.log(this.loginForm.value);
+    console.log("Se presionó");
+    
+    if (this.loginForm.valid) {
+      this.registroserv.loginUsuario(this.loginForm.value).subscribe(
+        async (response: any) => {
+          console.log('Login exitoso:', response);
+  
+          // Acceder al token correctamente y guardarlo en localStorage
+          const accessToken = response?.access_token;
+          if (accessToken) {
+            localStorage.setItem('accessToken', accessToken);
+            console.log('Token guardado en localStorage:', accessToken);
+          } else {
+            console.warn('El token no se encontró en la respuesta.');
+          }
+  
+          this.router.navigate(['/home']);
+        },
+        async (error) => {
+          console.error('Error en el login:', error);
+        }
+      );
+    }
   }
-
+  
+  
 }

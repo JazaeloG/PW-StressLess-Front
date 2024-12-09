@@ -10,7 +10,7 @@
     <form [formGroup]="registroForm!" (ngSubmit)="onRegister()">
       <ion-list class="form">
         <ion-input
-          formControlName="nombre"
+          formControlName="usuario_Nombre"
           class="input-container"
           label="Nombre(s)"
           label-placement="floating"
@@ -22,9 +22,9 @@
           <small *ngIf="nombre?.errors?.['minlength']">Debe tener al menos 2 caracteres.</small>
           <small *ngIf="nombre?.errors?.['pattern']">Solo puede contener letras.</small>
         </ion-text>
-  
+
         <ion-input
-          formControlName="apellidos"
+          formControlName="usuario_Apellido"
           class="input-container"
           label="Apellidos(s)"
           label-placement="floating"
@@ -36,9 +36,15 @@
           <small *ngIf="apellidos?.errors?.['minlength']">Debe tener al menos 2 caracteres.</small>
           <small *ngIf="apellidos?.errors?.['pattern']">Solo puede contener letras.</small>
         </ion-text>
+
+        <ion-text color="danger" *ngIf="apellidos?.touched && apellidos?.invalid">
+          <small *ngIf="apellidos?.errors?.['required']">El apellido es obligatorio.</small>
+          <small *ngIf="apellidos?.errors?.['minlength']">Debe tener al menos 2 caracteres.</small>
+          <small *ngIf="apellidos?.errors?.['pattern']">Solo puede contener letras.</small>
+        </ion-text>
   
         <ion-input
-          formControlName="correo"
+          formControlName="usuario_Correo"
           class="input-container"
           label="Correo"
           label-placement="floating"
@@ -51,16 +57,16 @@
           <small *ngIf="correo?.errors?.['email']">El formato de correo no es válido.</small>
         </ion-text>
   
-        <ion-select formControlName="sexo" label="Sexo" label-placement="floating" fill="outline">
-          <ion-select-option value="masculino">Masculino</ion-select-option>
-          <ion-select-option value="femenino">Femenino</ion-select-option>
+        <ion-select formControlName="usuario_Sexo" label="Sexo" label-placement="floating" fill="outline">
+          <ion-select-option value="MASCULINO">MASCULINO</ion-select-option>
+          <ion-select-option value="FEMENINO">FEMENINO</ion-select-option>
         </ion-select>
         <ion-text color="danger" *ngIf="sexo?.touched && sexo?.invalid">
           <small *ngIf="sexo?.errors?.['required']">El sexo es obligatorio.</small>
         </ion-text>
   
         <ion-input
-          formControlName="edad"
+          formControlName="usuario_Edad"
           class="input-container"
           label="Edad"
           label-placement="floating"
@@ -75,7 +81,7 @@
         </ion-text>
   
         <ion-input
-          formControlName="contrasena"
+          formControlName="usuario_Password"
           class="input-container"
           label="Contraseña"
           label-placement="floating"
@@ -92,7 +98,7 @@
   
       <ion-button expand="block" class="register-btn" type="submit" [disabled]="registroForm?.invalid">
         Registro
-      </ion-button>
+      </ion-button>      
     </form>
   
     <div class="login-link">

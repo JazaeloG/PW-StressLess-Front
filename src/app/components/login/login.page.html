@@ -7,10 +7,10 @@
     <div class="form">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="/home" name="loginForm" id="loginForm">
         <ion-item>
-          <ion-input label="Correo" color="medium" label-placement="floating" type="email" required></ion-input>
+          <ion-input formControlName="usuario_Correo" label="Correo" color="medium" label-placement="floating" type="email" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input label="Contraseña" color="medium" label-placement="floating" type="password" required>
+          <ion-input formControlName="usuario_Password" label="Contraseña" color="medium" label-placement="floating" type="password" required>
           </ion-input>
         </ion-item>
           <ion-button expand="block" class="custom-button-1" type="submit" id="btn" name="btn">

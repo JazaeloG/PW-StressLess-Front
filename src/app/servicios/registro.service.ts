@@ -7,15 +7,15 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class RegistroService {
-  private apiUrl = 'https://api.example.com/register'; 
+  private apiUrl = 'http://localhost:3000/auth/'; 
 
   constructor(private http: HttpClient) {}
 
-  //registrarUsuario(data: any): Observable<any> {
-  //  return this.http.post(this.apiUrl, data);
-  //}
+  loginUsuario(data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}login`, data);
+  }
+
   registrarUsuario(data: any): Observable<any> {
-    console.log('Simulación de envío de datos:', data);
-    return of({ success: true, message: 'Registro simulado exitoso' });
+    return this.http.post<any>(`${this.apiUrl}registrar`, data);
   }
 }

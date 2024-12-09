@@ -21,12 +21,12 @@ export class RegistroPage implements OnInit {
 
   ngOnInit() {
     this.registroForm = this.fb.group({
-      nombre: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
-      apellidos: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
-      correo: ['', [Validators.required, Validators.email]],
-      sexo: ['', Validators.required],
-      edad: ['', [Validators.required, Validators.min(18), Validators.max(100)]],
-      contrasena: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$')]]
+      usuario_Nombre: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
+      usuario_Apellido: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
+      usuario_Correo: ['', [Validators.required, Validators.email]],
+      usuario_Sexo: ['', Validators.required],
+      usuario_Edad: ['', [Validators.required, Validators.min(18), Validators.max(100)]],
+      usuario_Password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$')]]
     });
   }
 
@@ -59,10 +59,11 @@ export class RegistroPage implements OnInit {
     }
   }
 
-  get nombre() { return this.registroForm!.get('nombre'); }
-  get apellidos() { return this.registroForm!.get('apellidos'); }
-  get correo() { return this.registroForm!.get('correo'); }
-  get sexo() { return this.registroForm!.get('sexo'); }
-  get edad() { return this.registroForm!.get('edad'); }
-  get contrasena() { return this.registroForm!.get('contrasena'); }
+  get nombre() { return this.registroForm!.get('usuario_Nombre'); }
+  get apellidos() { return this.registroForm!.get('usuario_Apellido'); }
+  get correo() { return this.registroForm!.get('usuario_Correo'); }
+  get sexo() { return this.registroForm!.get('usuario_Sexo'); }
+  get edad() { return this.registroForm!.get('usuario_Edad'); }
+  get contrasena() { return this.registroForm!.get('usuario_Password'); }
+
 }
