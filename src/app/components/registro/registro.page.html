@@ -66,19 +66,18 @@
         </ion-text>
   
         <ion-input
-          formControlName="usuario_Edad"
-          class="input-container"
-          label="Edad"
-          label-placement="floating"
-          fill="outline"
-          placeholder="18"
-          type="number"
-        ></ion-input>
-        <ion-text color="danger" *ngIf="edad?.touched && edad?.invalid">
-          <small *ngIf="edad?.errors?.['required']">La edad es obligatoria.</small>
-          <small *ngIf="edad?.errors?.['min']">Debe ser al menos 18 años.</small>
-          <small *ngIf="edad?.errors?.['max']">Debe ser menor o igual a 100 años.</small>
-        </ion-text>
+            formControlName="usuario_FechaNacimiento"
+            class="input-container"
+            label="Fecha de Nacimiento"
+            label-placement="floating"
+            fill="outline"
+            placeholder="dd/mm/yyyy"
+            type="text"
+          ></ion-input>
+          <ion-text color="danger" *ngIf="fechaNacimiento?.touched && fechaNacimiento?.invalid">
+            <small *ngIf="fechaNacimiento?.errors?.['required']">La fecha de nacimiento es obligatoria.</small>
+            <small *ngIf="fechaNacimiento?.errors?.['pattern']">El formato debe ser dd/mm/yyyy.</small>
+          </ion-text>
   
         <ion-input
           formControlName="usuario_Password"

@@ -25,14 +25,24 @@ export class RegistroPage implements OnInit {
       usuario_Apellido: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
       usuario_Correo: ['', [Validators.required, Validators.email]],
       usuario_Sexo: ['', Validators.required],
-      usuario_Edad: ['', [Validators.required, Validators.min(18), Validators.max(100)]],
+      usuario_FechaNacimiento: ['', [Validators.required]],
       usuario_Password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$')]]
     });
   }
 
   async onRegister() {
     if (this.registroForm && this.registroForm.valid) {
-      this.registroService.registrarUsuario(this.registroForm.value).subscribe(
+      const formValue = this.registroForm.value;
+      const usuarioData = {
+        usuario_Nombre: formValue.usuario_Nombre,
+        usuario_Apellido: formValue.usuario_Apellido,
+        usuario_Correo: formValue.usuario_Correo,
+        usuario_Sexo: formValue.usuario_Sexo,
+        usuario_FechaNacimiento: formValue.usuario_FechaNacimiento,
+        usuario_Password: formValue.usuario_Password
+      };
+
+      this.registroService.registrarUsuario(usuarioData).subscribe(
         async () => {
           const alert = await this.alertController.create({
             header: 'Registro Exitoso',
@@ -63,7 +73,7 @@ export class RegistroPage implements OnInit {
   get apellidos() { return this.registroForm!.get('usuario_Apellido'); }
   get correo() { return this.registroForm!.get('usuario_Correo'); }
   get sexo() { return this.registroForm!.get('usuario_Sexo'); }
-  get edad() { return this.registroForm!.get('usuario_Edad'); }
+  get fechaNacimiento() { return this.registroForm!.get('usuario_FechaNacimiento'); }
   get contrasena() { return this.registroForm!.get('usuario_Password'); }
 
 }

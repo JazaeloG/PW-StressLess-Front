@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GlobalStateService } from 'src/app/servicios/global-service';
 import { RegistroService } from 'src/app/servicios/registro.service';
 
 @Component({
@@ -14,8 +15,9 @@ export class LoginPage implements OnInit {
   constructor(
     private router : Router,  
     private fb: FormBuilder,
-    private registroserv: RegistroService
-  ) { }
+    private registroserv: RegistroService,
+    private globalState: GlobalStateService) { }
+
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -41,7 +43,8 @@ export class LoginPage implements OnInit {
           } else {
             console.warn('El token no se encontró en la respuesta.');
           }
-  
+          this.globalState.correo = this.loginForm.value.usuario_Correo;
+          console.log('Correo en globalState:', this.globalState.correo);
           this.router.navigate(['/home']);
         },
         async (error) => {

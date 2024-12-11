@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { GlobalStateService } from './global-service';
 
 export interface UserInfo {
   id: number;
@@ -17,20 +18,21 @@ export interface UserInfo {
   providedIn: 'root',
 })
 export class InfoUsuarioService {
-  private apiURL = 'http://localhost:3000/auth/obtener-perfil';
+  private apiURL = 'http://localhost:3000/usuarios';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private globalService: GlobalStateService) {}
 
   getUserInfo(): Observable<UserInfo> {
-    return this.http.get<any>(this.apiURL).pipe(
+    console.log('Correo en globalState:', this.globalService.correo);
+    return this.http.get<any>(`${this.apiURL}/obtenerPorCorreo/${this.globalService.correo}`).pipe(
       map((response) => ({
         id: response.id_Usuario,
         nombre: response.usuario_Nombre,
         apellidos: response.usuario_Apellido,
         email: response.usuario_Correo,
         sexo: response.usuario_Sexo,
-        edad: response.usuario_Edad,
-        indiceindiceEstres: 23.0
+        edad: this.calcularEdad(response.usuario_FechaNacimiento),
+        indiceEstres: 23.0
       })),
       tap((userInfo) => {
         // Guardar en localStorage
@@ -43,4 +45,18 @@ export class InfoUsuarioService {
       })
     );
   }
+  private calcularEdad(fechaNacimiento: string): number {
+    const hoy = new Date();
+    const nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const mes = hoy.getMonth() - nacimiento.getMonth();
+    if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+      edad--;
+    }
+    return edad;
+  }
+  ngOnit() {
+    this.getUserInfo().subscribe();
+  }
+
 }
