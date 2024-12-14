@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { GlobalStateService } from './global-service';
 
 export interface UserInfo {
   id: number;
@@ -20,11 +19,11 @@ export interface UserInfo {
 export class InfoUsuarioService {
   private apiURL = 'http://localhost:3000/usuarios';
 
-  constructor(private http: HttpClient, private globalService: GlobalStateService) {}
+  constructor(private http: HttpClient) {}
 
   getUserInfo(): Observable<UserInfo> {
-    console.log('Correo en globalState:', this.globalService.correo);
-    return this.http.get<any>(`${this.apiURL}/obtenerPorCorreo/${this.globalService.correo}`).pipe(
+    console.log('Correo en local storage:', localStorage.getItem('correo'));
+    return this.http.get<any>(`${this.apiURL}/obtenerPorCorreo/${localStorage.getItem("correo")}`).pipe(
       map((response) => ({
         id: response.id_Usuario,
         nombre: response.usuario_Nombre,
