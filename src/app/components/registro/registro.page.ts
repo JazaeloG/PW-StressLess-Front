@@ -25,7 +25,7 @@ export class RegistroPage implements OnInit {
       usuario_Apellido: ['', [Validators.required, Validators.minLength(2), Validators.pattern('^[a-zA-Z ]+$')]],
       usuario_Correo: ['', [Validators.required, Validators.email]],
       usuario_Sexo: ['', Validators.required],
-      usuario_FechaNacimiento: ['', [Validators.required]],
+      usuario_Edad: ['', [Validators.required, Validators.maxLength(2)]],
       usuario_Password: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$')]]
     });
   }
@@ -38,7 +38,7 @@ export class RegistroPage implements OnInit {
         usuario_Apellido: formValue.usuario_Apellido,
         usuario_Correo: formValue.usuario_Correo,
         usuario_Sexo: formValue.usuario_Sexo,
-        usuario_FechaNacimiento: formValue.usuario_FechaNacimiento,
+        usuario_Edad: formValue.usuario_Edad,
         usuario_Password: formValue.usuario_Password
       };
 
@@ -73,7 +73,7 @@ export class RegistroPage implements OnInit {
   get apellidos() { return this.registroForm!.get('usuario_Apellido'); }
   get correo() { return this.registroForm!.get('usuario_Correo'); }
   get sexo() { return this.registroForm!.get('usuario_Sexo'); }
-  get fechaNacimiento() { return this.registroForm!.get('usuario_FechaNacimiento'); }
+  get fechaNacimiento() { return this.registroForm!.get('usuario_Edad'); }
   get contrasena() { return this.registroForm!.get('usuario_Password'); }
 
 }
