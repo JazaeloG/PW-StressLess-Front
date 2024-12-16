@@ -30,7 +30,7 @@ export class InfoUsuarioService {
         apellidos: response.usuario_Apellido,
         email: response.usuario_Correo,
         sexo: response.usuario_Sexo,
-        edad: this.calcularEdad(response.usuario_FechaNacimiento),
+        edad: response.usuario_Edad,
         indiceEstres: 23.0
       })),
       tap((userInfo) => {
