@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { InfoUsuarioService } from './info-usuario.service';
 import { UserInfo } from './info-usuario.service';
-import { of } from 'rxjs';
 
 
 describe('InfoUsuarioService', () => {

@@ -26,30 +26,24 @@ describe('RegistroService', () => {
   it('debería enviar una solicitud POST para loginUsuario', () => {
     const mockData = { username: 'test', password: '1234' };
     const mockResponse = { token: 'fake-jwt-token' };
-
     service.loginUsuario(mockData).subscribe((response) => {
       expect(response).toEqual(mockResponse);
     });
-
     const req = httpMock.expectOne(`http://localhost:3000/auth/login`);
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(mockData);
-
-    req.flush(mockResponse); // Simula la respuesta del servidor
+    req.flush(mockResponse);
   });
 
   it('debería enviar una solicitud POST para registrarUsuario', () => {
     const mockData = { username: 'newuser', password: '12345', email: 'test@test.com' };
     const mockResponse = { message: 'Usuario registrado con éxito' };
-
     service.registrarUsuario(mockData).subscribe((response) => {
       expect(response).toEqual(mockResponse);
     });
-
     const req = httpMock.expectOne(`http://localhost:3000/auth/registrar`);
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual(mockData);
-
-    req.flush(mockResponse); // Simula la respuesta del servidor
+    req.flush(mockResponse);
   });
 });
