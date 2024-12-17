@@ -44,7 +44,7 @@ export class InfoUsuarioService {
       })
     );
   }
-  private calcularEdad(fechaNacimiento: string): number {
+  public calcularEdad(fechaNacimiento: string): number {
     const hoy = new Date();
     const nacimiento = new Date(fechaNacimiento);
     let edad = hoy.getFullYear() - nacimiento.getFullYear();
