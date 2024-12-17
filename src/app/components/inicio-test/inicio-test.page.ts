@@ -7,12 +7,11 @@ import { TestService } from 'src/app/servicios/test.service';
   templateUrl: './inicio-test.page.html',
   styleUrls: ['./inicio-test.page.scss'],
 })
-export class InicioTestPage implements OnInit {
+export class InicioTestPage  {
 
   constructor(private router: Router, private testService: TestService) { }
 
-  ngOnInit() {
-  }
+  
 
   navegarEncuesta() {
     this.router.navigate(['/preguntas']);
