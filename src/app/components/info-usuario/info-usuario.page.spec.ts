@@ -14,14 +14,14 @@ describe('InfoUsuarioPage', () => {
 
   beforeEach(() => {
     const routerMock = jasmine.createSpyObj('Router', ['navigate']);
-    const infoUsuarioServiceSpy = jasmine.createSpyObj('InfoUsuarioService', ['getUserInfo']);
+    //const infoUsuarioServiceSpy = jasmine.createSpyObj('InfoUsuarioService', ['getUserInfo']);
 
     TestBed.configureTestingModule({
       declarations: [ InfoUsuarioPage ],
       imports: [IonicModule.forRoot(), HttpClientTestingModule],
       providers: [
         { provide: Router, useValue: routerMock},
-        { provide: InfoUsuarioService, useValue: infoUsuarioServiceSpy }
+        //{ provide: InfoUsuarioService, useValue: infoUsuarioServiceSpy }
       ]
     });
 
@@ -39,13 +39,34 @@ describe('InfoUsuarioPage', () => {
   });
 
   it('should initialize correctly ngOnInit', async () => {
+    // Simular el valor almacenado en localStorage
     spyOn(localStorage, 'getItem').and.returnValue('juan@ejemplo.com');
+    
+    // Simular el método getUserInfo para devolver un observable
+    spyOn(infoUsuarioService, 'getUserInfo').and.returnValue(of({ 
+      id: 1,
+      nombre: 'Juan',
+      apellidos: 'Pérez',
+      email: 'juan@ejemplo.com',
+      sexo: 'Masculino',
+      edad: 24,
+      indiceEstres: 23.0
+    }));
+    
+    // Espía en console.log
     const consoleLogSpy = spyOn(console, 'log');
+  
+    // Llamar a ngOnInit
     await component.ngOnInit();
+  
+    // Verificar que se llamó a getUserInfo
     expect(infoUsuarioService.getUserInfo).toHaveBeenCalled();
+  
+    // Verificar que console.log se llamó con los mensajes correctos
     expect(consoleLogSpy).toHaveBeenCalledWith('InfoUsuarioPage ngOnInit');
     expect(consoleLogSpy).toHaveBeenCalledWith('Correo en globalState:', 'juan@ejemplo.com');
   });
+  
 
   it('should nav to login', () => {
     component.cerrarSesion();
