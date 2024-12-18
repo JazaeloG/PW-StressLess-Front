@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ExercisePage } from './exercise.page';
 import { ActivatedRoute } from '@angular/router';
 import { RecomendacionesService } from 'src/app/servicios/recomendaciones.service';
-import { of } from 'rxjs';
 import { IonicModule } from '@ionic/angular';
 
 describe('ExercisePage', () => {
