@@ -1,35 +1,39 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ResultadosPage } from './resultados.page';
 import { Router } from '@angular/router';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-
+import { ResultadosPage } from './resultados.page';
 
 describe('ResultadosPage', () => {
   let component: ResultadosPage;
   let fixture: ComponentFixture<ResultadosPage>;
-  let router: jasmine.SpyObj<Router>;
+  let mockRouter: any;
 
-  beforeEach(() => {
-    const routerMock = jasmine.createSpyObj('Router', ['navigate']);
-    TestBed.configureTestingModule({
-      declarations: [ ResultadosPage ],
-      imports: [ HttpClientTestingModule],
+  beforeEach(async () => {
+    mockRouter = jasmine.createSpyObj('Router', ['navigate']);
+    await TestBed.configureTestingModule({
+      declarations: [ResultadosPage],
       providers: [
-        { provide: Router, useValue: routerMock}
-      ]
+        { provide: Router, useValue: mockRouter },
+      ],
+    }).compileComponents();
+    spyOnProperty(history, 'state', 'get').and.returnValue({
+      enviarPuntaje: { puntaje: 85 },
     });
     fixture = TestBed.createComponent(ResultadosPage);
     component = fixture.componentInstance;
-    router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+
+  it('debería crearse el componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should nav to info', () => {
+  it('debería inicializar testResult desde history.state.enviarPuntaje', () => {
+    component.ngOnInit();
+    expect(component.testResult).toEqual({ puntaje: 85 });
+  });
+
+  it('debería navegar a "/info-usuario" al llamar a navegarResultados', () => {
     component.navegarResultados();
-    expect(router.navigate).toHaveBeenCalledWith(['/info-usuario']);
+    expect(mockRouter.navigate).toHaveBeenCalledWith(['/info-usuario']);
   });
 });
